@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "1012195878252",
-    "project_id": "note-977c3",
-    "storage_bucket": "note-977c3.appspot.com"
+    "project_number": "789105485942",
+    "project_id": "note-da9a5",
+    "storage_bucket": "note-da9a5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1012195878252:android:1e9500b7c29a1d27a87f49",
+        "mobilesdk_app_id": "1:789105485942:android:abff3bcba3f60bb2f29757",
         "android_client_info": {
           "package_name": "com.example.caretutors"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCOd2aWg2pjVknepL0x3Km83aIvSgm391s"
+          "current_key": "AIzaSyDYFlpB5NWLmTfigrm3XVLJDOdN4_wiEJE"
         }
       ],
       "services": {

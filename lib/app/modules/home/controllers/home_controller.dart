@@ -1,23 +1,21 @@
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
-  //TODO: Implement HomeController
+import '../../../data/note_repository.dart';
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
+class HomeController extends GetxController {
+  final NotesRepository _notesRepository = Get.put(NotesRepository());
+
+  RxList<Map<String, dynamic>> notes = RxList([]);
 
   @override
   void onReady() {
     super.onReady();
+    fetchNotes();
   }
 
-  @override
-  void onClose() {
-    super.onClose();
+  void fetchNotes() {
+    _notesRepository.getNotes().listen((noteList) {
+      notes.value = noteList;
+    });
   }
-
-  void increment() => count.value++;
 }
