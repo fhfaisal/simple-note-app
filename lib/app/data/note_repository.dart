@@ -61,4 +61,19 @@ class NotesRepository extends GetxController {
       throw Exception("Error adding note: $e");
     }
   }
+  Future<void> updateNote({
+    required String title,
+    required String description,
+    required noteId,
+  }) async {
+    try {
+      await FirebaseFirestore.instance.collection('notes').doc(noteId).update({
+        'title': title,
+        'description': description,
+      });// Close the page on success
+    } catch (e) {
+      print('Error updating note: $e');
+      // Handle error (e.g., show a snackbar)
+    }
+  }
 }

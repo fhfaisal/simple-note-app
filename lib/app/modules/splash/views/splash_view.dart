@@ -20,9 +20,9 @@ class SplashView extends GetView<SplashController> {
               controller: controller.pageController,
               onPageChanged: (value) => controller.updatePageIndicator(value),
               children: const [
-                OnBoarding(title: "Title 1", subtitle: "Subtitle 1"),
-                OnBoarding(title: "Title 2", subtitle: "Subtitle 2"),
-                OnBoarding(title: "Title 3", subtitle: "Subtitle 3"),
+                OnBoarding(title: "Your Digital Notebook", subtitle: "Capture and organize your thoughts, ideas, and tasks effortlessly."),
+                OnBoarding(title: "Customize Your Notes", subtitle: "Add tags, set reminders, and personalize your notes to suit your style."),
+                OnBoarding(title: "Sync Across Devices", subtitle: "Access your notes from anywhere with our seamless cloud synchronization."),
               ],
             ),
             ///Skip Button

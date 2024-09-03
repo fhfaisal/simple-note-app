@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/addNote/bindings/add_note_binding.dart';
 import '../modules/addNote/views/add_note_view.dart';
+import '../modules/editNote/bindings/edit_note_binding.dart';
+import '../modules/editNote/views/edit_note_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.REGISTRATION,
       page: () => const RegistrationView(),
       binding: RegistrationBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDIT_NOTE,
+      page: () => const EditNoteView(),
+      binding: EditNoteBinding(),
     ),
   ];
 }
