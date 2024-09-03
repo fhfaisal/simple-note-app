@@ -17,7 +17,6 @@ class OnBoardingSkipButton extends GetView<SplashController> {
       top: AppDeviceUtility.getAppBarHeight(),
       right: AppSizes.defaultSpace,
       child: TextButton(
-        onLongPress: () => controller.navigateToLogin(),
         onPressed: () => controller.skipPage(),
         child: const Text('Skip'),
       ),

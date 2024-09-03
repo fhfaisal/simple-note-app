@@ -23,7 +23,6 @@ class OnBoardingNextButton extends GetView<SplashController> {
             backgroundColor:AppColors.primary,
           ),
           onPressed: () => controller.nextPage(),
-          onLongPress: () => controller.navigateToLogin(),
           child: const Icon(Iconsax.arrow_right_3)),
     );
   }

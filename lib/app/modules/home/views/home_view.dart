@@ -15,13 +15,14 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Notes'),
-        centerTitle: true,
-        actions: [
-          GestureDetector(
-            onTap:() =>  controller.logOut(),
-              child: const Icon(Iconsax.logout))
-        ],
+        title:  Padding(
+          padding: const EdgeInsets.only(left: AppSizes.defaultSpace/3),
+          child: Text('Notes',style: Theme.of(context).textTheme.headlineLarge,),
+        ),
+        actions: [Padding(
+          padding: const EdgeInsets.only(right: AppSizes.defaultSpace),
+          child: GestureDetector(onTap: () => controller.logOut(), child: const Icon(Iconsax.logout)),
+        )],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: AppSizes.defaultSpace),
@@ -30,7 +31,9 @@ class HomeView extends GetView<HomeController> {
             : Obx(() => controller.notes.isNotEmpty
                 ? ListView.separated(
                     itemCount: controller.notes.length,
-                    separatorBuilder: (context, index) => const SizedBox(height: AppSizes.spaceBtwItems,),
+                    separatorBuilder: (context, index) => const SizedBox(
+                          height: AppSizes.spaceBtwItems,
+                        ),
                     itemBuilder: (context, index) {
                       final note = controller.notes[index];
                       return ListTile(
@@ -40,9 +43,11 @@ class HomeView extends GetView<HomeController> {
                           note['title'],
                           style: Theme.of(context).textTheme.headlineMedium,
                         ),
-                        subtitle: Text(note['description'],style: Theme.of(context).textTheme.labelMedium,),
-                        onTap: () {
-                        },
+                        subtitle: Text(
+                          note['description'],
+                          style: Theme.of(context).textTheme.labelMedium,
+                        ),
+                        onTap: () {},
                       );
                     })
                 : const Center(child: Text('No notes available.')))),
@@ -58,10 +63,7 @@ class HomeView extends GetView<HomeController> {
                 color: Colors.white,
               ),
               SizedBox(width: AppSizes.sm),
-              Text(
-                'Add Note',
-                style: TextStyle(color: Colors.white, fontSize: 18),
-              ),
+              Text('Add Note'),
             ],
           )),
     );

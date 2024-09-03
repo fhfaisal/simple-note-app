@@ -35,7 +35,7 @@ class SplashController extends GetxController {
   }
 
   navigateToLogin() {
-    Get.offAllNamed(Routes.HOME);
+    Get.offAllNamed(Routes.LOGIN);
     _storage.write("isOnBoardingDone", true);
   }
 }
