@@ -1,4 +1,5 @@
 import 'package:caretutors/app/auth/authentication_repository.dart';
+import 'package:caretutors/app/utils/theme/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: "Application",
+        theme: AppTheme.lightTheme,
         getPages: AppPages.routes,
         home: const Scaffold(body: Center(child: CircularProgressIndicator())),
     );
