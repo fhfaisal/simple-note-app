@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../utils/constants/app_text.dart';
-import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
-import '../../../utils/helpers/helper_function.dart';
-
 class AppLoginHeader extends StatelessWidget {
   const AppLoginHeader({
     super.key,

@@ -21,7 +21,7 @@ class HomeView extends GetView<HomeController> {
         ),
         actions: [Padding(
           padding: const EdgeInsets.only(right: AppSizes.defaultSpace),
-          child: GestureDetector(onTap: () => controller.logOut(), child: const Icon(Iconsax.logout)),
+          child: GestureDetector(onTap: () => controller.logoutDialog(), child: const Icon(Iconsax.logout)),
         )],
       ),
       body: Padding(

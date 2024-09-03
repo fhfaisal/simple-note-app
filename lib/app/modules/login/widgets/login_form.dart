@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../routes/app_pages.dart';
-import '../../../utils/constants/app_text.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/validators/validators.dart';
 import '../controllers/login_controller.dart';
@@ -27,7 +26,7 @@ class AppLoginForm extends GetView<LoginController> {
             TextFormField(
               controller: controller.email.value,
               validator: (value) => AppValidators.validateEmail(value),
-              decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right), labelText: AppText.email),
+              decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right), labelText: "Email"),
             ),
             const SizedBox(height: AppSizes.spaceBtwInputFields),
 
@@ -38,7 +37,7 @@ class AppLoginForm extends GetView<LoginController> {
               validator: (value) => AppValidators.validatePassword(value),
               decoration: InputDecoration(
                   prefixIcon: const Icon(Iconsax.password_check),
-                  labelText: AppText.password,
+                  labelText: 'Password',
                   suffixIcon: IconButton(
                     onPressed: () => controller.hidePass.value = !controller.hidePass.value,
                     icon: Icon(controller.hidePass.value?Iconsax.eye_slash:Iconsax.eye),
@@ -51,7 +50,7 @@ class AppLoginForm extends GetView<LoginController> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () =>controller.loginWithEmailAndPassword(),
-                child: const Text(AppText.signIn),
+                child: const Text('Login'),
               ),
             ),
             const SizedBox(height: AppSizes.sm),
@@ -60,7 +59,7 @@ class AppLoginForm extends GetView<LoginController> {
               width: double.infinity,
               child: OutlinedButton(
                 onPressed: () => Get.toNamed(Routes.REGISTRATION),
-                child: const Text(AppText.createAccount),
+                child: const Text('Registration'),
               ),
             ),
           ],

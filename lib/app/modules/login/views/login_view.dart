@@ -11,8 +11,12 @@ class LoginView extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Padding(
+    return  Scaffold(
+      appBar: AppBar(
+        title: const Text('Login'),
+        centerTitle: true,
+      ),
+      body: const Padding(
         padding: EdgeInsets.symmetric(horizontal: AppSizes.defaultSpace),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

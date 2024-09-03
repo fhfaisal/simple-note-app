@@ -10,7 +10,7 @@ class LoginController extends GetxController {
   final email = TextEditingController().obs;
   final password = TextEditingController().obs;
   final hidePass = false.obs;
-  final AuthenticationRepository _authRepo = AuthenticationRepository.instance;
+  final AuthenticationRepository _authRepo = Get.put(AuthenticationRepository());
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
 
   /// Login using email and password
