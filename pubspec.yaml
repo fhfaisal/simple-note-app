@@ -15,6 +15,7 @@ dependencies:
   get_storage: ^2.1.1
   iconsax:
   smooth_page_indicator: ^1.2.0+3
+  intl: ^0.18.0
   go_router:  # For navigation
 
 dev_dependencies:

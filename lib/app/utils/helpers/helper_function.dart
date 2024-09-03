@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class AppHelperFunction {
   static Color? getColor(String value) {
@@ -67,9 +69,16 @@ class AppHelperFunction {
     return MediaQuery.of(Get.context!).size.width;
   }
 
-  // static String getFormattedDate(DateTime date, {String format = 'dd MMM yyyy'}) {
-  //   return DateFormat(format).format(date);
-  // }
+  static String getFormattedDate(DateTime date, {String format = 'dd-MM-yy'}) {
+    return DateFormat(format).format(date);
+  }
+  static String getFormattedTime(DateTime date, {String format = 'hh mm'}) {
+    return DateFormat(format).format(date);
+  }
+  static String formatDate(Timestamp timestamp) {
+    DateTime date = timestamp.toDate();
+    return DateFormat.yMMMd().add_jm().format(date);
+  }
 
   static List<T> removeDuplicates<T>(List<T> list) {
     return list.toSet().toList();

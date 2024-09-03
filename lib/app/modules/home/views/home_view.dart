@@ -1,5 +1,7 @@
 import 'package:caretutors/app/utils/constants/colors.dart';
 import 'package:caretutors/app/utils/constants/sizes.dart';
+import 'package:caretutors/app/utils/helpers/helper_function.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -46,6 +48,26 @@ class HomeView extends GetView<HomeController> {
                         subtitle: Text(
                           note['description'],
                           style: Theme.of(context).textTheme.labelMedium,
+                        ),
+                        trailing: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              AppHelperFunction.getFormattedDate(
+                                note['createdAt'] != null
+                                    ? (note['createdAt'] as Timestamp).toDate()
+                                    : DateTime.now(),
+                              ),
+                            ),
+                            Text(
+                              AppHelperFunction.getFormattedTime(
+                                note['createdAt'] != null
+                                    ? (note['createdAt'] as Timestamp).toDate()
+                                    : DateTime.now(),
+                              ),
+                            ),
+                          ],
                         ),
                         onTap: () {},
                       );

@@ -34,6 +34,7 @@ class HomeController extends GetxController {
       notes.clear();
       Get.offAllNamed(Routes.LOGIN);
     } catch (e) {
+      print(e);
       Get.snackbar('Error', 'Failed to log out: $e');
     }
   }
@@ -57,7 +58,7 @@ class HomeController extends GetxController {
                   height: AppSizes.buttonHeight - 10,
                   child: Row(
                     children: [
-                      Expanded(child: ElevatedButton(onPressed: () => logOut, child: const Text("Yes"))),
+                      Expanded(child: ElevatedButton(onPressed: () => logOut(), child: const Text("Yes"))),
                       const SizedBox(width: AppSizes.sm),
                       Expanded(child: OutlinedButton(onPressed: () => Get.back() ,child: const Text("Close"))),
                     ],

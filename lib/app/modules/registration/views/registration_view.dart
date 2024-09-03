@@ -17,20 +17,22 @@ class RegistrationView extends GetView<RegistrationController> {
           title: const Text('Registration'),
           centerTitle: true,
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(AppSizes.defaultSpace),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ///Title
-              Text("Sign up for saving notes", style: Theme.of(context).textTheme.headlineMedium),
-              const SizedBox(height: AppSizes.spaceBtwSections),
-
-              ///Form
-              const AppSignupForm(),
-              const SizedBox(height: AppSizes.spaceBtwSections),
-            ],
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(AppSizes.defaultSpace),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ///Title
+                Text("Sign up for saving notes", style: Theme.of(context).textTheme.headlineMedium),
+                const SizedBox(height: AppSizes.spaceBtwSections),
+          
+                ///Form
+                const AppSignupForm(),
+                const SizedBox(height: AppSizes.spaceBtwSections),
+              ],
+            ),
           ),
         ));
   }

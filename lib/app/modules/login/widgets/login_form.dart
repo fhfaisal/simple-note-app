@@ -48,10 +48,10 @@ class AppLoginForm extends GetView<LoginController> {
             ///Sign in button
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(
+              child: Obx(() => ElevatedButton(
                 onPressed: () =>controller.loginWithEmailAndPassword(),
-                child: const Text('Login'),
-              ),
+                child:controller.loading.value?const Center(child: CircularProgressIndicator(),) :const Text('Login'),
+              )),
             ),
             const SizedBox(height: AppSizes.sm),
             ///Create account button

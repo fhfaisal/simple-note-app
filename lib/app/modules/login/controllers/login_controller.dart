@@ -10,6 +10,7 @@ class LoginController extends GetxController {
   final email = TextEditingController().obs;
   final password = TextEditingController().obs;
   final hidePass = false.obs;
+  final loading = false.obs;
   final AuthenticationRepository _authRepo = Get.put(AuthenticationRepository());
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
 
@@ -20,6 +21,7 @@ class LoginController extends GetxController {
       if (!loginFormKey.currentState!.validate()) {
         return;
       }
+      loading.value = true;
 
       ///Logged in by firebase
       await _authRepo.loginWithEmailAndPassword(email.value.text.trim(), password.value.text.trim());
@@ -28,5 +30,6 @@ class LoginController extends GetxController {
     } catch (e) {
       SnackBarMessage.warning(title: 'Oh Snap', message: e.toString());
     }
+    loading.value = false;
   }
 }
